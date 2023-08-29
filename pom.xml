@@ -11,9 +11,10 @@
   <description>
     Cassandra to BigQuery dataflow template
   </description>
-      <properties>
+    <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <beam.version>2.49.0</beam.version>
     </properties>
 
   <dependencyManagement>
@@ -75,25 +76,25 @@
         </exclusion>
       </exclusions>
     </dependency>
-
     <dependency>
-      <groupId>com.datastax.cassandra</groupId>
-      <artifactId>cassandra-driver-core</artifactId>
-      <version>${cassandra.driver.version}</version>
-      <exclusions>
+    <groupId>com.datastax.oss</groupId>
+    <artifactId>java-driver-core</artifactId>
+    <version>4.17.0</version>
+          <exclusions>
         <exclusion>
           <groupId>com.github.jnr</groupId>
           <artifactId>jffi</artifactId>
         </exclusion>
       </exclusions>
-    </dependency>
+</dependency>
 
-    <dependency>
+    <!-- <dependency>
       <groupId>org.scassandra</groupId>
       <artifactId>cql-antlr</artifactId>
       <version>${scassandra.version}</version>
       <scope>test</scope>
-    </dependency>
+    </dependency> -->
+</dependencies>
 
 
 </project>
